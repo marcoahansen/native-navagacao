@@ -1,11 +1,11 @@
-import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { Button, StatusBar, StyleSheet, Text, View } from "react-native"
 import { RootStackParamList } from "../../routes/TabRoutes";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 
 export const Home = () => {
-  const navigation = useNavigation<BottomTabNavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<DrawerNavigationProp<RootStackParamList>>();
   const navegaSobre = () => {
     navigation.navigate('Sobre', { nome: "Marco", email: "m@m.com" })
   }
@@ -14,6 +14,8 @@ export const Home = () => {
       <StatusBar />
       <Text style={styles.text}>Tela Home</Text>
       <Button title="Ir para sobre" onPress={navegaSobre} />
+      <Button title="Abrir drawer" onPress={() => navigation.openDrawer()} />
+      <Button title="Ir para contato" onPress={() => navigation.jumpTo("Contato")} />
     </View>
   )
 }
