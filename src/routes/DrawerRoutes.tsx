@@ -3,6 +3,7 @@ import { Home } from "../pages/Home";
 import { Sobre } from "../pages/Sobre";
 import { Contato } from "../pages/Contato";
 import { CustomDrawer } from "../components/CustomDrawer";
+import { BuscaCep } from "../pages/BuscaCep";
 
 const Drawer = createDrawerNavigator();
 
@@ -23,6 +24,7 @@ export const DrawerRoutes = () => {
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Sobre" component={Sobre} />
       <Drawer.Screen name="Contato" component={Contato} />
+      <Drawer.Screen name="BuscaCep" component={BuscaCep} />
     </Drawer.Navigator>
   )
 }
